@@ -16,19 +16,6 @@ class _TodoListState extends State<TodoList> {
   List<Widget> get taskList {
     List<Widget> list = [];
     for (Task taski in widget.tasks) {
-      /*list.add(CheckboxListTile(
-        selectedTileColor: Colors.amber,
-        value: taski.progress,
-        onChanged: (boolean) {
-          setState(() {
-            taski.setProgress(boolean);
-          });
-        },
-        title: Text(
-          taski.task,
-          style: const TextStyle(color: Colors.white),
-        ),
-      ));*/
       list.add(
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -41,8 +28,6 @@ class _TodoListState extends State<TodoList> {
                     onChanged: (value) {
                       setState(() => taski.setProgress(value));
                     })),
-            // You can play with the width to adjust your
-            // desired spacing
             const SizedBox(width: 10.0),
             Text(
               taski.task,
