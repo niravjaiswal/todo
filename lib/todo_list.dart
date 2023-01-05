@@ -15,13 +15,17 @@ class _TodoListState extends State<TodoList> {
     List<Widget> list = [];
     for (Task taski in widget.tasks) {
       list.add(CheckboxListTile(
+        selectedTileColor: Colors.amber,
         value: taski.progress,
         onChanged: (boolean) {
           setState(() {
             taski.setProgress(boolean);
           });
         },
-        title: Text(taski.task),
+        title: Text(
+          taski.task,
+          style: const TextStyle(color: Colors.white),
+        ),
       ));
     }
     return list;

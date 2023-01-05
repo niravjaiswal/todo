@@ -16,42 +16,41 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
   @override
   Widget build(BuildContext context) {
     TextEditingController? texthandler = TextEditingController();
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text("Add Task"),
-          ),
-          body: Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Add Task"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Textbox(texthandler),
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Textbox(texthandler),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  OutlinedButton(
-                    child: const Text("Cancel"),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        widget.tasks.add(Task(task: texthandler.text));
-                        widget.notifyParent();
-                      });
-                      print(widget.tasks);
-                      setState(() {
-                        Navigator.pop(context);
-                      });
-                    },
-                    child: const Text("Add Task"),
-                  ),
-                ],
+              OutlinedButton(
+                child: const Text("Cancel"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    widget.tasks.add(Task(task: texthandler.text));
+                    widget.notifyParent();
+                  });
+                  print(widget.tasks);
+                  setState(() {
+                    Navigator.pop(context);
+                  });
+                },
+                child: const Text("Add Task"),
               ),
             ],
-          )),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -24,6 +24,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "ToDo List",
+      theme: ThemeData(
+          scaffoldBackgroundColor: const Color.fromARGB(255, 21, 21, 21),
+          unselectedWidgetColor: Colors.white),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("ToDo List"),
