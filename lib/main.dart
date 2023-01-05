@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Task> tasks = [Task(task: "task1"), Task(task: "task2")];
+  List<Task> tasks = [];
   refresh() {
     setState(() {
       tasks = tasks;
