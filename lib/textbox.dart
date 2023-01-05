@@ -12,7 +12,8 @@ class Textbox extends StatelessWidget {
         style: const TextStyle(color: Colors.white),
         controller: textHandler,
         decoration: const InputDecoration(
-            border: OutlineInputBorder(),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(width: 1, color: Colors.white)),
             hintText: 'Enter a task',
             hintStyle: TextStyle(color: Colors.white)),
       ),

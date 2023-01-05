@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text("ToDo List"),
         ),
-        body: (TodoList(tasks)),
+        body: TodoList(tasks),
         floatingActionButton: AddTaskButton(tasks, refresh),
       ),
     );

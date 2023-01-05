@@ -25,15 +25,19 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Textbox(texthandler),
+          const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: Colors.white, width: 2)),
                 child: const Text("Cancel"),
                 onPressed: () {
                   Navigator.pop(context);
                 },
               ),
+              const SizedBox(width: 5),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
