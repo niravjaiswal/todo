@@ -31,7 +31,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             children: [
               OutlinedButton(
                 style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: Colors.white, width: 2)),
+                    side: const BorderSide(color: Colors.white, width: 2)),
                 child: const Text("Cancel"),
                 onPressed: () {
                   Navigator.pop(context);
@@ -44,7 +44,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     widget.tasks.add(Task(task: texthandler.text));
                     widget.notifyParent();
                   });
-                  print(widget.tasks);
                   setState(() {
                     Navigator.pop(context);
                   });

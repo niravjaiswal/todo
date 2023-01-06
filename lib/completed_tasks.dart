@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/task.dart';
+import 'dart:io';
 
-class TodoList extends StatefulWidget {
+class CompletedTasks extends StatefulWidget {
   final List<Task> tasks;
   final Function whenChecked;
   final Function update;
 
-  TodoList(this.tasks, this.whenChecked, this.update);
+  CompletedTasks(this.tasks, this.whenChecked, this.update);
 
   @override
-  State<TodoList> createState() => _TodoListState();
+  State<CompletedTasks> createState() => _CompletedTasksState();
 }
 
-class _TodoListState extends State<TodoList> {
-  List<Widget> get taskList {
+class _CompletedTasksState extends State<CompletedTasks> {
+  List<Widget> get completedList {
     List<Widget> list = [];
-    for (Task taski in widget.tasks) {
+    for (Task taski in (widget.tasks).reversed) {
       list.add(
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -46,20 +47,9 @@ class _TodoListState extends State<TodoList> {
 
   @override
   Widget build(BuildContext context) {
-    if (taskList.isEmpty) {
-      return Container(
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 56, 56, 56),
-          borderRadius: BorderRadius.all(Radius.circular(7)),
-        ),
-        margin: const EdgeInsets.all(15),
-        width: double.infinity,
-        padding: const EdgeInsets.all(15),
-        child: const Text(
-          "No Tasks",
-          style: TextStyle(color: Colors.white),
-          textAlign: TextAlign.center,
-        ),
+    if (completedList.isEmpty) {
+      return const SizedBox(
+        height: 15,
       );
     }
     return Container(
@@ -71,7 +61,7 @@ class _TodoListState extends State<TodoList> {
         padding: const EdgeInsets.all(15),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: taskList,
+          children: completedList,
         ));
   }
 }
