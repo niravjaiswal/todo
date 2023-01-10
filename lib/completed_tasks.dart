@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/task.dart';
-import 'dart:io';
 
 class CompletedTasks extends StatefulWidget {
   final List<Task> tasks;

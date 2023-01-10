@@ -34,7 +34,6 @@ class _MyAppState extends State<MyApp> {
         completed.removeAt(i);
       }
     }
-    print(completed);
   }
 
   refresh() {
